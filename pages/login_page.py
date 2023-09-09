@@ -9,6 +9,7 @@ class LoginPage(BasePage):
     PASSWORD = (By.ID, "Password")
     LOGIN_BUTTON = (By.XPATH, "//button[@class='button-1 login-button']")
     MAIN_ERROR = (By.CLASS_NAME, 'message-error')
+    EMAIL_ERROR = (By.ID, "Email-error")
 
     def navigate_to_login_page(self):
         self.browser.get(self.LOGIN_PAGE_URL)
@@ -24,4 +25,10 @@ class LoginPage(BasePage):
 
     def main_error_is_displayed(self):
         assert self.is_displayed(locator=self.MAIN_ERROR)
+
+    def email_error_is_displayed(self):
+        assert self.is_displayed(locator=self.EMAIL_ERROR)
+
+    def email_error_message(self):
+        assert self.get_text(locator=self.EMAIL_ERROR)
 

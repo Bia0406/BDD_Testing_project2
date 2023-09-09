@@ -26,3 +26,18 @@ def step_impl(context):
     context.login_page.main_error_is_displayed()
 
 
+@then("Email error is displayed")
+def step_impl(context):
+    context.login_page.email_error_is_displayed()
+
+
+@then('Email error message contains "Please enter your email"')
+def step_impl(context):
+    context.login_page.email_error_message()
+
+@then('Email error message contains "Wrong email"')
+def step_impl(context):
+    context.login_page.email_error_message()
+
+
+
