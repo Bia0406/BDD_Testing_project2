@@ -3,7 +3,7 @@ from selenium.webdriver.support.select import Select
 
 
 class BasePage(Browser):
-    _BASE_URL = "https://demo.nopcommerce.com/"
+    BASE_URL = "https://demo.nopcommerce.com/"
 
     def find(self, locator):
         return self.browser.find_element(*locator)

@@ -6,14 +6,14 @@ def step_impl(context):
     context.login_page.navigate_to_login_page()
 
 
-@when('I insert "unregistered@yahoo.com" email')
-def step_impl(context):
-    context.login_page.insert_invalid_email()
+@when('I insert "{email}" email')
+def step_impl(context, email):
+    context.login_page.insert_email(email)
 
 
 @when("I insert a password")
 def step_impl(context):
-    context.login_page.insert_some_password()
+    context.login_page.insert_any_password()
 
 
 @when("I click the login button")
@@ -23,6 +23,6 @@ def step_impl(context):
 
 @then("Main error is displayed")
 def step_impl(context):
-    context.login_page.check_error()
+    context.login_page.main_error_is_displayed()
 
 
